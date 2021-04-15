@@ -1,25 +1,62 @@
 <script>
-	export let name;
+	export let regnum = null
+
+	import FirstTimeForm from './FirstTimeForm.svelte'
+	import Today from './Today.svelte'
+
+	const stateChange = (rn) => {
+		regnum = rn
+		localStorage.setItem('regnum', regnum)
+	}
 </script>
 
+<header>
+	<h1>Filename Generator</h1>
+	<h2>End Semester Examinations April 2021</h2>
+</header>
+
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	{#if !!regnum}
+	<Today _regnum={regnum} stateHandler={stateChange} />
+	{:else}
+	<FirstTimeForm stateHandler={stateChange} />
+	{/if}
 </main>
 
 <style>
+	header {
+		max-height: 10vh;
+		display: grid;
+		place-items: center;
+		background-color: #ff774a;
+		padding: 0.5em;
+		margin: 0;
+	}
+
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		max-height: 90vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0.5em;
+		margin: 0;
+	}
+
+	h1,
+	h2 {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 350;
 	}
 
 	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 0.75em;
 	}
 
 	@media (min-width: 640px) {
