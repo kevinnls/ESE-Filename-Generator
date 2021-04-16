@@ -16,7 +16,7 @@
 		<tr>
 			<td>Course/Paper Title</td>
 			<td>{data.courseTitle}</td>
-			<td><button class="mod-section">Change course title</button></td>
+			<td><button disabled class="mod-section">Change course title</button></td>
 		</tr>
 	</table>
 </div>
@@ -41,5 +41,9 @@
 		text-decoration: underline;
 		color: blue;
 		cursor: pointer;
+	}
+	button:disabled {
+		color: grey;
+		cursor: initial;
 	}
 </style>
