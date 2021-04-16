@@ -1,9 +1,6 @@
 <script>
-	export let _regnum
+	export let data
 	export let stateHandler
-	$: regnum = _regnum
-	import Filename from './Filename.svelte'
-	let courseTitle = '/*Placeholder Text*/'
 
 </script>
 
@@ -12,20 +9,24 @@
 	<table>
 		<tr>
 			<td>Register Number</td>
-			<td>{regnum}</td>
-			<td><button class="mod-section" on:click="{() => {stateHandler(false)}}">Change register number</button>
+			<td>{data.regnum}</td>
+			<td><button class="mod-section" on:click={()=> {stateHandler(null)}}>Change register number</button>
 			</td>
 		</tr>
 		<tr>
 			<td>Course/Paper Title</td>
-			<td>{courseTitle}</td>
-			<td><button class="mod-section">Change course number</button></td>
+			<td>{data.courseTitle}</td>
+			<td><button class="mod-section">Change course title</button></td>
 		</tr>
 	</table>
 </div>
-<Filename regnum={regnum} stateHandler={stateHandler} />
 
 <style>
+
+	table {
+		border-spacing: 2ch;
+		border: 1px solid #000;
+	}
 	.grid-parent {
 		margin: 1em;
 		padding: .75em;
@@ -39,5 +40,6 @@
 		background: none;
 		text-decoration: underline;
 		color: blue;
+		cursor: pointer;
 	}
 </style>

@@ -2,10 +2,11 @@
 	export let regnum = null
 
 	import FirstTimeForm from './FirstTimeForm.svelte'
-	import Today from './Today.svelte'
+	import Main from './Main.svelte'
 
 	const stateChange = (rn) => {
 		regnum = rn
+		console.log(rn)
 		localStorage.setItem('regnum', regnum)
 	}
 </script>
@@ -16,8 +17,8 @@
 </header>
 
 <main>
-	{#if !!regnum}
-	<Today _regnum={regnum} stateHandler={stateChange} />
+	{#if !!regnum && regnum !== "null"}
+	<Main regnum={regnum} stateHandler={stateChange} />
 	{:else}
 	<FirstTimeForm stateHandler={stateChange} />
 	{/if}
