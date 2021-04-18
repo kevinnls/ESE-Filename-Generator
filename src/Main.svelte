@@ -4,7 +4,6 @@
 
 	import Filename from './Filename.svelte'
 	import Today from './Today.svelte'
-	import PageCount from './PageCount.svelte'
 
 	import { courseTitleFetcher } from './modules/courseTitleFetcher'
 
@@ -22,5 +21,4 @@
 </script>
 
 <Today data={{...data}} handlers={handlers} />
-<PageCount countChangeHandler={handlers.pageCount} pageCount={data.pageCount} />
 <Filename data={{...data}}/>
