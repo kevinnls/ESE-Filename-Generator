@@ -8,18 +8,19 @@
 
 	import { courseTitleFetcher } from './modules/courseTitleFetcher'
 
-	$: courseTitle = courseTitleFetcher(regnum)
-	$: pageCount = 5
-	$: filename = `${regnum}_${courseTitle}_${pageCount}pgs`
-	const handlePageCountChange = (e) => {
-		pageCount = e.target.value
+	$: data = {
+		regnum: regnum,
+		courseAbbr: courseTitleFetcher(regnum) || null,
+		pageCount: 5
+	}
+	
+	const handlers = {
+		pageCount : e => data.pageCount = e.target.value,
+		courseAbbr : e => { data.courseAbbr = e.target.value},
+		state: stateHandler,
 	}
 </script>
 
-{#if courseTitle !== false }
-<Today data={{regnum: regnum, courseTitle: courseTitle, }} stateHandler={stateHandler} />
-<PageCount countChangeHandler={handlePageCountChange} pageCount={pageCount} />
-<Filename filename={filename} />
-{:else}
-<h3>I have no idea what exam you are writing today</h3>
-{/if}
+<Today data={{...data}} handlers={handlers} />
+<PageCount countChangeHandler={handlers.pageCount} pageCount={data.pageCount} />
+<Filename data={{...data}}/>

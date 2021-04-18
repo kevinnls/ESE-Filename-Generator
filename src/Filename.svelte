@@ -1,8 +1,15 @@
 <script>
-	export let filename
-	$: pageCount = 5
+	export let data
 	import copyTextToClipboard from "copy-to-clipboard"
+	
+	$: filename = `${data.regnum}_${data.courseAbbr}_${data.pageCount}pgs`
+	
+	const FALSY_VALUES = ["false", false, undefined, "undefined", null, "null", 0, "0", "", " "]
+	const isFalsy = (val) => FALSY_VALUES.some( (falsy) => val === falsy )
+	const someAreFalsy = (obj) => Object.values(obj).some(ele => isFalsy(ele))
 
+	$: copyButtonIsDisabled = someAreFalsy(data)
+	
 	const copyToClipboard = () => {
 		copyTextToClipboard(filename)
 		console.log(`"${filename}" has been copied to clipboard`)
