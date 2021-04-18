@@ -3,6 +3,27 @@
 	export let handlers
 	import PageCount from './PageCount.svelte'
 	import CourseAbbr from './CourseAbbr.svelte';
+	let classGroup = "Arrear"
+	switch(data.regnum.slice(0,10)){
+		case "2001711010": 
+			classGroup = "I BA"
+			break;
+		case "1901711010": 
+			classGroup = "II BA"
+			break;
+		case "1801711010": 
+			classGroup = "III BA"
+			break;
+		case "1901712006": 
+			classGroup = "I MA"
+			break;
+		case "2001712006": 
+			classGroup = "II MA"
+			break;
+		default: 
+			classGroup = "Arrear"
+	}
+
 </script>
 
 <div class="today flex-parent">
@@ -15,7 +36,7 @@
 		</div>
 		<span style="font-size: 1.3em">{data.regnum}</span>		
 	</div>
-	<CourseAbbr inputHandler={handlers.courseAbbr} courseAbbr={data.courseAbbr} />
+	<CourseAbbr inputHandler={handlers.courseAbbr} courseAbbr={data.courseAbbr} classGroup={classGroup} />
 	<PageCount countChangeHandler={handlers.pageCount} pageCount={data.pageCount} />
 </div>
 

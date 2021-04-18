@@ -1,0 +1,27 @@
+{
+  "Arrear": [
+    "LitFor",
+    "ShakeII",
+    "VicAge",
+    "Gram&Ling",
+    "HEL&SHE",
+    "EngI",
+    "RomAge",
+    "EngIII"
+  ],
+  "I BA": [
+    "(Language)",
+    "EngII",
+    "AoE",
+    "MPJ",
+    "HEL&SHE",
+    "(GC Name)",
+    "ValEduCS",
+    "ValEduSS",
+    "ValEduGS"
+  ],
+  "II BA": ["(Language)", "EngIV", "MP", "ShakesIV", "P&R", "ID", "PD"],
+  "III BA": ["SCrit", "NewWrit", "ETClass", "MythLit", "PMS"],
+  "I MA": ["Placeholder"],
+  "II MA": ["Placeholder"]
+}
