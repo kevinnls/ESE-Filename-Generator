@@ -53,6 +53,7 @@
 		color: transparent;
 		text-shadow: 0 0 #000;
 		width: 100%;
+		margin: 0px auto;
 	}
 	.filename-grid {
 		width: 100%;

@@ -22,7 +22,7 @@ main > div {
 
 h4 {
   font-size: 1em;
-  margin: 0px;
+  margin: 0.25em 0px;
   padding: 0.5ch;
 }
 
@@ -89,4 +89,12 @@ button:focus {
 }
 .flex-parent {
   display: flex;
+}
+.flex-parent.today-input-section {
+  flex-direction: column;
+  padding: 0.5ch;
+}
+.flex-parent.today-input-section input,
+button {
+  margin: 0px 0px;
 }
