@@ -2,19 +2,16 @@
 	export let data
 	import copyTextToClipboard from "copy-to-clipboard"
 	
-	$: filename = `${data.regnum}_${data.courseAbbr}_${data.pageCount}pgs`
-	
 	const FALSY_VALUES = ["false", false, undefined, "undefined", null, "null", 0, "0", "", " "]
 	const isFalsy = (val) => FALSY_VALUES.some( (falsy) => val === falsy )
 	const someAreFalsy = (obj) => Object.values(obj).some(ele => isFalsy(ele))
 
 	$: copyButtonIsDisabled = someAreFalsy(data)
-	
+	$: filename = `${data.regnum}_${ isFalsy(data.courseAbbr) ? "XYZ" : data.courseAbbr }_${data.pageCount}pgs`
 	const copyToClipboard = () => {
 		copyTextToClipboard(filename)
 		console.log(`"${filename}" has been copied to clipboard`)
 	}
-
 </script>
 
 <div class="grid-parent filename-grid">
