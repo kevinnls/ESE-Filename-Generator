@@ -3,23 +3,23 @@
 	export let countChangeHandler
 </script>
 
-<div class="input-section grid-parent">
-	<label for="pagecount">How many pages?</label>
+<div class="flex-parent">
+	<label for="pagecount"><h4>How many pages?</h4></label>
+	<div class="input-section grid-parent">
 	<input type="range" min="0" max="50" value={pageCount} on:input={countChangeHandler}>
 	<input type="number" min="0" max="50" value={pageCount} on:input={countChangeHandler} name="pagecount">
+	</div>
 </div>
 
 <style>
 	.input-section {
-		gap: 0.5em;
-		grid-template-rows: 1fr auto;
-		grid-template-columns: auto 7ch;
+		width: 100%;
+		grid-template-columns: auto 5.5ch;
 		align-items: center;
-		/* padding: 1em; */
-		margin: 2em;
+		grid-gap: 1ch;
+		text-align: center;
 	}
-
-	.input-section>label {
-		grid-column: 1/span 2;
+	.flex-parent{
+		flex-direction:column;
 	}
 </style>

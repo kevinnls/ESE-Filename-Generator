@@ -14,6 +14,18 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+main > div {
+  width: 100%;
+  margin: 0.5em 0em;
+  padding: 0.5em;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 0px;
+  padding: 0.5ch;
+}
+
 a {
   color: rgb(0, 100, 200);
   text-decoration: none;

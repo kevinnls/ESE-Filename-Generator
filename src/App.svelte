@@ -35,13 +35,19 @@
 
 	main {
 		max-height: 90vh;
+		width: 90%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 0.5em;
-		margin: 0;
+		margin: 3em auto;
 	}
-
+	@media ( min-width: 800px ){
+		main {
+			width: 30%;
+		}
+	}
+	
 	h1,
 	h2 {
 		margin-top: 0px;
