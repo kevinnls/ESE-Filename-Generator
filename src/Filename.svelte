@@ -1,6 +1,7 @@
 <script>
 	export let data
 	import copyTextToClipboard from "copy-to-clipboard"
+	let filenameField
 	
 	const FALSY_VALUES = ["false", false, undefined, "undefined", null, "null", 0, "0", "", " "]
 	const isFalsy = (val) => FALSY_VALUES.some( (falsy) => val === falsy )
@@ -15,7 +16,7 @@
 </script>
 
 <div class="grid-parent filename-grid">
-	<input type="text" value={filename} readonly>
+	<input type="text" value={filename} bind:this={filenameField} on:click={copyButtonIsDisabled || filenameField.select()} readonly>
 	<button disabled={copyButtonIsDisabled} alt="Click to copy" on:click="{copyToClipboard}">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
 	</button>
