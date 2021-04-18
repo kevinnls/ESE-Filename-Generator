@@ -6,7 +6,6 @@
 
 	const stateChange = (rn) => {
 		regnum = rn
-		console.log(rn)
 		localStorage.setItem('regnum', regnum)
 	}
 </script>

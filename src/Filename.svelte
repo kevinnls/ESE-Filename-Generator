@@ -10,13 +10,11 @@
 
 </script>
 
-<div class="filename-grid grid-parent">
-	<div class="grid-parent name-section">
-		<input type="text" value={filename} style="--len: {filename.length+1}ch" redonly>
-		<button alt="Click to copy" on:click="{copyToClipboard}">
-		<img alt="Click to copy" src="/copy_content.svg">
-		</button>
-	</div>
+<div class="grid-parent filename-grid">
+	<input type="text" style="--len: {filename.length+1}ch" value={filename} readonly>
+	<button disabled={copyButtonIsDisabled} alt="Click to copy" on:click="{copyToClipboard}">
+	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+	</button>
 </div>
 
 <style>
@@ -28,22 +26,30 @@
 	button:hover{
 		box-shadow: 0px 0px 3px grey;
 	}
+	button:disabled:hover{
+		box-shadow: initial;
+	}
 	button:click{
 		filter: brightness(-80%);
 	}
+	button > svg {
+		width: 2.5ch;
+		height: 2em;
+	}
+	button:disabled > svg{
+		fill: darkgrey;
+		outline: darkgrey
+	}
 	input[type="text"] {
-		width: var(--len);
+		text-align: center;
 		padding: 1ch;
 		color: transparent;
 		text-shadow: 0 0 #000;
+		width: var(--len);
 	}
 
 	.filename-grid {
 		place-items: center;
-		
-	}
-
-	.name-section {
 		grid-template-columns: 90% 10%;
 		gap: 0.5ch;
 	}

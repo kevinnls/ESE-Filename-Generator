@@ -15,7 +15,7 @@
 <div class="grid-parent">
 	<form action="#xxx" on:submit|preventDefault={handleSubmit}>
 		<label for="regnum">Enter your Register Number</label>
-		<input placeholder="Register Number" pattern={regNumPattern} name="regnum" type="text" autofocus required />
+		<input placeholder="Register Number" pattern={regNumPattern} name="regnum" type="text" required />
 		<input type="submit">
 	</form>
 </div>
