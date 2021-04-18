@@ -15,7 +15,7 @@
 		</div>
 		<span style="font-size: 1.3em">{data.regnum}</span>		
 	</div>
-	<CourseAbbr inputHander={handlers.courseAbbr} courseAbbr={data.courseAbbr} />
+	<CourseAbbr inputHandler={handlers.courseAbbr} courseAbbr={data.courseAbbr} />
 	<PageCount countChangeHandler={handlers.pageCount} pageCount={data.pageCount} />
 </div>
 
