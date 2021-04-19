@@ -3,29 +3,32 @@
 	export let courseAbbr
 	export let classGroup
 	import abbreviations from "../public/abbreviations.json"
-	let rest
+
 	const classGroups = ["Arrear", "I BA", "II BA", "III BA", "I MA", "II MA" ]
 	let index = classGroups.indexOf(classGroup)
 	let sortedGroups = [...classGroups.splice(index,1), ...classGroups]
-	const CUSTOM_NAMES = ["Custom", "(Language)", "(GC Name), "(ID Name)"]
-	
+	const CUSTOM_NAMES = ["Custom", "(Language II)", "(Language IV)", "(GC Name)", "(ID Name)"]
+
 	$: showCustomField = false
+	let _custom = null
 	const isCustom = (item) => CUSTOM_NAMES.some((custom) => custom === item)
 	const internalCheck = (e) => {
 		if(isCustom(e.target.value)){
 			showCustomField = true
+			_custom = e.target.value
 			inputHandler(null)
 			return
 		} else {
 			showCustomField = false
+			_custom = null
 			inputHandler(e)
-			return
 		}
 	}
 </script>
 <div class="flex-parent today-input-section">
 	<label for="courseabbrs"><h4>Course/Paper { classGroup === "I MA" || classGroup === "II MA" ? "Title" : "Abbrev"}</h4></label>
-	<select on:input={internalCheck} placeholder="Choose a course" value={courseAbbr || ""} name="courseabbrs" id="courseabbrs" required>
+	<!-- svelte-ignore a11y-no-onchange -->
+	<select on:change={internalCheck} placeholder="Choose a course" value={_custom || courseAbbr || ""} name="courseabbrs" id="courseabbrs" required>
 		<option value="" disabled>Choose a course</option>
 		<option value="Custom">Custom...</option>
 		{#each sortedGroups as classGroup}

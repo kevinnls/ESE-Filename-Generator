@@ -10,7 +10,7 @@
     "EngIII"
   ],
   "I BA": [
-    "(Language)",
+    "(Language II)",
     "EngII",
     "AoE",
     "MPJ",
@@ -20,7 +20,15 @@
     "ValEduSS",
     "ValEduGS"
   ],
-  "II BA": ["(Language)", "EngIV", "MP", "ShakesIV", "P&R", "(ID Name)", "PD"],
+  "II BA": [
+    "(Language IV)",
+    "EngIV",
+    "MP",
+    "ShakesIV",
+    "P&R",
+    "(ID Name)",
+    "PD"
+  ],
   "III BA": ["SCrit", "NewWrit", "ETClass", "MythLit", "PMS"],
   "I MA": [
     "The Romantic Age",
