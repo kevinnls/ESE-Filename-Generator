@@ -6,7 +6,7 @@
 	let rest
 	const classGroups = ["Arrear", "I BA", "II BA", "III BA", "I MA", "II MA" ]
 	let index = classGroups.indexOf(classGroup)
-	let sortedGroups = [classGroups[index], ...classGroups.slice(0,index-1), ...classGroups.slice(index+1, classGroups.length)]
+	let sortedGroups = [...classGroups.splice(index,1), ...classGroups]
 	console.log(sortedGroups)
 	const CUSTOM_NAMES = ["Custom", "(Language)", "(GC Name)"]
 	
