@@ -1,7 +1,6 @@
 import timetable from "../../public/timetable.json";
 
-const courseTitleFetcher = (regNum) => {
-  let ret = false;
+const courseTitleFetcher = (classGroup) => {
   const customISTDateFormat = {
     year: "numeric",
     month: "2-digit",
@@ -10,7 +9,13 @@ const courseTitleFetcher = (regNum) => {
   };
   const todayIST = new Date().toLocaleString("en-CA", customISTDateFormat);
 
-  return timetable[todayIST] || false;
+  try {
+    return timetable[todayIST][classGroup];
+  } catch (err) {
+    console.warn("Don't think you have a regular exam today");
+    console.error(err);
+    return false;
+  }
 };
 
 export { courseTitleFetcher };
