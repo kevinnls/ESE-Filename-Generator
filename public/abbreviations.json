@@ -22,6 +22,13 @@
   ],
   "II BA": ["(Language)", "EngIV", "MP", "ShakesIV", "P&R", "ID", "PD"],
   "III BA": ["SCrit", "NewWrit", "ETClass", "MythLit", "PMS"],
-  "I MA": ["Placeholder"],
-  "II MA": ["Placeholder"]
+  "I MA": [
+    "The Romantic Age",
+    "The Victorian Age",
+    "The Modern Age",
+    "Shakespeare",
+    "European Fiction and Drama",
+    "Applied Linguistics and Statistics"
+  ],
+  "II MA": ["General Essay", "American Literature", "English Language Teaching"]
 }
