@@ -7,7 +7,7 @@
 	const classGroups = ["Arrear", "I BA", "II BA", "III BA", "I MA", "II MA" ]
 	let index = classGroups.indexOf(classGroup)
 	let sortedGroups = [...classGroups.splice(index,1), ...classGroups]
-	const CUSTOM_NAMES = ["Custom", "(Language)", "(GC Name)"]
+	const CUSTOM_NAMES = ["Custom", "(Language)", "(GC Name), "(ID Name)"]
 	
 	$: showCustomField = false
 	const isCustom = (item) => CUSTOM_NAMES.some((custom) => custom === item)
