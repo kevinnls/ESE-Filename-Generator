@@ -11,8 +11,8 @@
 		2001711010: "I BA",
 		1901711010: "II BA",
 		1801711010: "III BA",
-		1901712006: "I MA",
-		2001712006: "II MA",
+		1901712006: "II MA",
+		2001712006: "I MA",
 	}
 	const classGroup = classGroups[regnum.slice(0,10)] || "Arrear"
 

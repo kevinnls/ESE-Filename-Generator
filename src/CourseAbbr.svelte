@@ -24,7 +24,7 @@
 	}
 </script>
 <div class="flex-parent today-input-section">
-	<label for="courseabbrs"><h4>Course/Paper Abbrev</h4></label>
+	<label for="courseabbrs"><h4>Course/Paper { classGroup === "I MA" || classGroup === "II MA" ? "Title" : "Abbrev"}</h4></label>
 	<select on:input={internalCheck} placeholder="Choose a course" value={courseAbbr || ""} name="courseabbrs" id="courseabbrs" required>
 		<option value="" disabled>Choose a course</option>
 		<option value="Custom">Custom...</option>
