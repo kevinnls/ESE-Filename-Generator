@@ -7,11 +7,8 @@
 	const classGroups = ["Arrear", "I BA", "II BA", "III BA", "I MA", "II MA" ]
 	let index = classGroups.indexOf(classGroup)
 	let sortedGroups = [...classGroups.splice(index,1), ...classGroups]
-	console.log(sortedGroups)
 	const CUSTOM_NAMES = ["Custom", "(Language)", "(GC Name)"]
 	
-	let customField
-
 	$: showCustomField = false
 	const isCustom = (item) => CUSTOM_NAMES.some((custom) => custom === item)
 	const internalCheck = (e) => {
