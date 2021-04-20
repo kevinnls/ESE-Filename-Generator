@@ -44,7 +44,7 @@
 			</optgroup>
 		{/each}
 	</select>
-	{#if showCustomField}
+	{#if showCustomField || !!_custom}
 	<input id="courseAbbr" list="courseabbrs-data" value={courseAbbr} pattern=".+" placeholder="Enter the course abbreviation" on:input={inputHandler} required>
 	{/if}
 </div>
