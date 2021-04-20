@@ -12,6 +12,11 @@
 	$: showCustomField = false
 	let _custom = null
 	const isCustom = (item) => CUSTOM_NAMES.some((custom) => custom === item)
+	if(isCustom(courseAbbr)){
+		showCustomField = true
+		_custom = courseAbbr
+		inputHandler(null)
+	}
 	const internalCheck = (e) => {
 		if(isCustom(e.target.value)){
 			showCustomField = true
