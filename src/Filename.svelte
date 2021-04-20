@@ -9,7 +9,7 @@
 	const someAreFalsy = (obj) => Object.values(obj).some(ele => isFalsy(ele))
 
 	$: copyButtonIsDisabled = someAreFalsy(data)
-	$: filename = `${data.regnum}_${ isFalsy(data.courseAbbr) ? "XYZ" : data.courseAbbr }_${data.pageCount}pgs`
+	$: filename = `${data.regnum}_${ isFalsy(data.courseAbbr) ? "XYZ" : data.courseAbbr }_${data.pageCount}`
 
 	const copyToClipboard = () => {
 		copyTextToClipboard(filename)
