@@ -4,6 +4,7 @@
 
 	import Filename from './Filename.svelte'
 	import Today from './Today.svelte'
+	import Timetable from './Timetable.svelte'
 
 	import { courseTitleFetcher } from './modules/courseTitleFetcher'
 
@@ -30,5 +31,9 @@
 	}
 </script>
 
+{#if window.location.search === "?timetable"}
+<Timetable classGroups ={{...classGroups}} classGroup={data.classGroup}/>
+{:else}
 <Today data={{...data}} handlers={handlers} />
 <Filename data={{...data}}/>
+{/if}
