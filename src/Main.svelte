@@ -23,7 +23,7 @@
 		pageCount: 5,
 		classGroup: classGroup
 	}
-	
+
 	const handlers = {
 		pageCount : e => data.pageCount = e.target.value,
 		courseAbbr : e => data.courseAbbr = e?.target?.value || '',

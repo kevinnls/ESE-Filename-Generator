@@ -11,7 +11,7 @@
 </script>
 
 <header>
-	<h1>Filename Generator</h1>
+	<h1><a href="/">Filename Generator</a></h1>
 	<h2>End Semester Examinations April 2021</h2>
 </header>
 
