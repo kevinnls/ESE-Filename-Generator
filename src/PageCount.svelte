@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex-parent today-input-section">
-	<label for="pagecount"><h4>How many pages? <small>(excluding cover page)</h4></label>
+	<label for="pagecount"><h4>How many pages? <small>(<em>including</em> cover page)</h4></label>
 	<div class="grid-parent">
 	<input type="range" min="0" max="50" value={pageCount} on:input={countChangeHandler}>
 	<input type="number" min="0" max="50" value={pageCount} on:input={countChangeHandler} name="pagecount">
