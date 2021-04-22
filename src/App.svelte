@@ -1,12 +1,19 @@
 <script>
 	export let regnum = null
+	export let trackingConsent = true
 
 	import FirstTimeForm from './FirstTimeForm.svelte'
 	import Main from './Main.svelte'
+	import TrackingConsentButton from './TrackingConsentButton.svelte'
 
 	const stateChange = (rn) => {
 		regnum = rn
 		localStorage.setItem('regnum', regnum)
+	}
+
+	const consentChange = () => {
+		trackingConsent = !trackingConsent
+		localStorage.setItem('trackingconsent', trackingConsent)
 	}
 </script>
 
@@ -23,6 +30,12 @@
 	{/if}
 </main>
 
+<footer>
+	<span>
+	Anonymous collection of usage data : <TrackingConsentButton handler={consentChange} trackingConsent={trackingConsent}/>
+	</span>
+</footer>
+
 <style>
 	header {
 		max-height: 10vh;
@@ -33,6 +46,20 @@
 		margin: 0;
 	}
 
+	footer { 
+		background-color: #ff774a;
+		position: absolute;
+		bottom: 0;
+		padding: 0.5em 0;
+		font-size: 0.7em;
+		text-align: center;
+		width: 100%;
+	}
+	@media (max-width: 800px){
+		footer{
+			bottom: 3em;
+		}
+	}
 	main {
 		max-height: 90vh;
 		width: 90%;

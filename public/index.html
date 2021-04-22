@@ -14,11 +14,17 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N84PZKHVVZ"></script>
 	<script async>
-		if (window.location.hostname === "esefilename.netlify.app") {
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-			gtag('config', 'G-N84PZKHVVZ');
+		if (window.localStorage.getItem('trackingconsent') === "true") {
+			if (window.location.hostname === "esefilename.netlify.app") {
+				window.dataLayer = window.dataLayer || [];
+				function gtag() { dataLayer.push(arguments); }
+				gtag('js', new Date());
+				gtag('config', 'G-N84PZKHVVZ');
+			} else {
+				console.log("Tracking disabled due to non-production environment")
+			}
+		} else {
+			console.log("Tracking has been disabled")
 		}
 	</script>
 	<script defer src='/build/bundle.js'></script>
